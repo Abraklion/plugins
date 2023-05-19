@@ -1,0 +1,32 @@
+@use "../../variables" as v;
+@use ".." as m;
+
+/*
+  Миксин Цвет текста
+ */
+
+@mixin text-color($container, $orientation: v.$orientation, $prefix: v.$prefix) {
+
+  .#{$prefix}Text-color {
+    @include m.rulesBreakpoint($container,(
+      color: v.$primary
+    ),'primary', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      color: v.$success
+    ),'success', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      color: v.$warning
+    ),'warning', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      color: v.$danger
+    ),'danger', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      color: v.$dark
+    ),'dark', $orientation);
+  }
+
+}

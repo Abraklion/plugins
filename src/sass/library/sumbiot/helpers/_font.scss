@@ -1,0 +1,10 @@
+@use "../general/variables" as v;
+@use "../general/mixins/helpers/font" as mF;
+
+// region " Шрифт "
+
+@include mF.font(v.$container,v.$orientation)
+
+// endregion
+
+

@@ -1,0 +1,5 @@
+@use "../variables" as v;
+@use "../library/sumbiot/general/mixins/components/container" as mC;
+
+@include mC.container(v.$container,v.$orientation);
+

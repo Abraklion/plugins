@@ -1,0 +1,40 @@
+@use "../variables" as v;
+
+.sForm__error{
+  vertical-align: baseline;
+
+  padding: 12px 9px;
+
+  background-color: #fffdfd;
+  background-image: none;
+
+  font-weight: 400;
+  font-size: 16px;
+
+  opacity: 1;
+
+  .sForm__label & {
+    vertical-align: middle;
+
+    padding: 0 8px 0 19px;
+
+    background-image: url(../img/error-icon.svg);
+    background-position: left top 3px;
+    background-size: 13px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+
+    font-weight: 400;
+    font-size: 11px;
+
+    text-transform: none;
+
+    opacity: 0.8;
+
+  }
+
+}
+
+.sForm__valid {
+  background-color: #f8fef5;
+}

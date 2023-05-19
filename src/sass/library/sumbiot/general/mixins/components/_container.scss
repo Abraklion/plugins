@@ -1,0 +1,118 @@
+@use "sass:map";
+@use "sass:meta";
+@use "sass:color";
+
+@use "../../variables" as v;
+@use "../../function" as f;
+
+/*
+  Миксин Контейнер
+ */
+
+@mixin container($container, $orientation: 'mobile-first', $width-container: v.$width-container, $prefix: v.$prefix) {
+
+  $z: 0;
+  $route: 'min';
+
+  @if $orientation == 'desktop-first' {
+    $z: 1;
+    $route: 'max';
+  }
+
+  .#{$prefix}Container {
+    width: 100%;
+
+    @if $orientation == 'desktop-first' {
+      max-width: $width-container;
+    }
+
+    padding: 0 12px;
+    margin: 0 auto;
+
+    box-sizing: border-box;
+
+    // общии стили
+    @each $key, $val in $container {
+
+      &-#{$key} {
+        width: 100%;
+
+        @if $orientation == 'desktop-first' {
+          max-width: $width-container;
+        }
+
+        padding: 0 12px;
+        margin: 0 auto;
+
+        box-sizing: border-box;
+      }
+
+    }
+
+    // брейкпоинт контейнер
+    @each $key, $val in $container {
+
+      @media (#{$route}-width:  map.get($val, "breakpoint") - $z) {
+        max-width: map.get($val, "max-width");
+      }
+
+    }
+
+    // брейкпоинт модификаторы контейнер
+    @each $key, $val in $container {
+
+      &-#{$key}{
+
+        @each $key2, $val2 in $container {
+
+          @if $orientation == 'desktop-first' {
+
+            @if map.get($val, "breakpoint") >= map.get($val2, "breakpoint"){
+
+              @media (#{$route}-width: map.get($val2, "breakpoint") - $z) {
+                max-width: map.get($val2, "max-width");
+              }
+
+            }
+
+          } @else {
+
+            @if map.get($val, "breakpoint") <= map.get($val2, "breakpoint"){
+
+              @media (#{$route}-width: map.get($val2, "breakpoint") - $z) {
+                max-width: map.get($val2, "max-width");
+              }
+
+            }
+
+          }
+        }
+      }
+    }
+
+    // контейнер на всю ширину
+    &-fluid{
+      width: 100%;
+
+      @if $orientation == 'desktop-first' {
+        max-width: none;
+      }
+
+      padding: 0 12px;
+      margin: 0 auto;
+
+      box-sizing: border-box;
+    }
+
+    // брейкпоинт модификаторы контейнер на всю ширину
+    @each $key, $val in $container {
+
+      &-#{$key}-fluid{
+        @media (#{$route}-width:  map.get($val, "breakpoint") - $z) {
+          max-width: none;
+        }
+      }
+
+    }
+  }
+}

@@ -1,0 +1,4 @@
+@use "../general/variables" as v;
+@use "../general/mixins/components/grid" as mG;
+
+@include mG.grid(v.$container,v.$orientation);

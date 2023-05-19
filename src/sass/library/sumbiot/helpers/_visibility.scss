@@ -1,0 +1,8 @@
+@use "../general/variables" as v;
+@use "../general/mixins/helpers/visibility" as mV;
+
+// region " Отображения или скрытия элемента "
+
+@include mV.visibility(v.$container,v.$orientation)
+
+// endregion

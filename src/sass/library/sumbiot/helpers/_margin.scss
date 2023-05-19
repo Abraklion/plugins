@@ -1,0 +1,13 @@
+@use "../general/variables" as v;
+@use "../general/mixins/helpers/margin" as mM;
+
+// region " Отступы "
+
+@include mM.margin(v.$container,v.$orientation)
+
+// endregion
+
+
+
+
+

@@ -1,0 +1,110 @@
+@use "../../variables" as v;
+@use ".." as m;
+
+/*
+  Миксин Шрифт
+ */
+
+@mixin font($container, $orientation: v.$orientation, $prefix: v.$prefix) {
+
+  // 1 Размер текста
+
+  .#{$prefix}Fz {
+    @include m.rulesBreakpoint($container,(
+      font-size: 14px
+    ),'14', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      font-size: 15px
+    ),'15', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      font-size: 16px
+    ),'16', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      font-size: 18px
+    ),'18', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      font-size: 20px
+    ),'20', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      font-size: 22px
+    ),'22', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      font-size: 24px
+    ),'24', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      font-size: 26px
+    ),'26', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      font-size: 28px
+    ),'28', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      font-size: 30px
+    ),'30', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      font-size: 32px
+    ),'32', $orientation);
+  }
+
+  // 2 Жирность
+
+  .#{$prefix}Fw {
+    @include m.rulesBreakpoint($container,(
+      font-weight: 100
+    ),'100', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      font-weight: 200
+    ),'200', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      font-weight: 300
+    ),'300', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      font-weight: 400
+    ),'400', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      font-weight: 500
+    ),'500', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      font-weight: 600
+    ),'600', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      font-weight: 700
+    ),'700', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      font-weight: 800
+    ),'800', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      font-weight: 900
+    ),'900', $orientation);
+  }
+
+  // 3 Стиль
+
+  .#{$prefix}Fs {
+    @include m.rulesBreakpoint($container,(
+      font-style: normal
+    ),'normal', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      font-style: italic
+    ),'italic', $orientation);
+  }
+
+}

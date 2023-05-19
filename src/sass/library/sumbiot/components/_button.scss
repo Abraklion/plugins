@@ -1,0 +1,6 @@
+@use "../general/variables" as v;
+@use "../general/mixins/components/button" as mB;
+
+@include mB.button();
+
+

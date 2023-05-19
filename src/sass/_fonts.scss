@@ -1,0 +1,15 @@
+@use "mixins" as m;
+
+//-----===== Подключение шрифтов ====-----//
+
+// Roboto-300 - latin_cyrillic
+@include m.fontInclude("Roboto","roboto-300",normal,300,"Roboto-Light");
+
+// Roboto-400 - latin_cyrillic
+@include m.fontInclude("Roboto","roboto-400",normal,400,"Roboto-Regular");
+
+// Roboto-500 - latin_cyrillic
+@include m.fontInclude("Roboto","roboto-500",normal,500,"Roboto-Medium");
+
+// Roboto-700 - latin_cyrillic
+@include m.fontInclude("Roboto","roboto-700",normal,700,"Roboto-Bold");

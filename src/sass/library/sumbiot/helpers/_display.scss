@@ -1,0 +1,9 @@
+@use "../general/variables" as v;
+@use "../general/mixins/helpers/display" as mD;
+
+// region " 1 Тип отображения элемента "
+
+@include mD.display(v.$container,v.$orientation)
+
+// endregion
+

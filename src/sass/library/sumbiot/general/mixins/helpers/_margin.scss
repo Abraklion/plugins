@@ -1,0 +1,190 @@
+@use "../../variables" as v;
+@use ".." as m;
+
+/*
+  Миксин Отступы
+ */
+
+@mixin margin($container, $orientation: v.$orientation, $prefix: v.$prefix) {
+
+  // 1 Со всех сторон
+
+  .#{$prefix}M {
+    @include m.rulesBreakpoint($container,(
+      margin: 0
+    ),'0', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      margin: 16px
+    ),'16', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      margin: 24px
+    ),'24', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      margin: 32px
+    ),'32', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      margin: auto
+    ),'auto', $orientation);
+  }
+
+
+  // 2 Лево - Право
+
+  .#{$prefix}Mx {
+    @include m.rulesBreakpoint($container,(
+      margin-left: 0,
+      margin-right: 0
+    ),'0', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      margin-left: 16px,
+      margin-right: 16px
+    ),'16', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      margin-left: 24px,
+      margin-right: 24px
+    ),'24', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      margin-left: 32px,
+      margin-right: 32px
+    ),'32', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      margin-left: auto,
+      margin-right: auto
+    ),'auto', $orientation);
+  }
+
+  // 3 Верх - Низ
+
+  .#{$prefix}My {
+    @include m.rulesBreakpoint($container,(
+      margin-top: 0,
+      margin-bottom: 0
+    ),'0', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      margin-top: 16px,
+      margin-bottom: 16px
+    ),'16', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      margin-top: 24px,
+      margin-bottom: 24px
+    ),'24', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      margin-top: 32px,
+      margin-bottom: 32px
+    ),'32', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      margin-top: auto,
+      margin-bottom: auto
+    ),'auto', $orientation);
+
+  }
+
+  // 4 Лево
+
+  .#{$prefix}Ml {
+    @include m.rulesBreakpoint($container,(
+      margin-left: 0
+    ),'0', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      margin-left: 16px
+    ),'16', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      margin-left: 24px
+    ),'24', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      margin-left: 32px
+    ),'32', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      margin-left: auto
+    ),'auto', $orientation);
+  }
+
+  // 5 Право
+
+  .#{$prefix}Mr {
+    @include m.rulesBreakpoint($container,(
+      margin-right: 0
+    ),'0', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      margin-right: 16px
+    ),'16', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      margin-right: 24px
+    ),'24', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      margin-right: 32px
+    ),'32', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      margin-right: auto
+    ),'auto', $orientation);
+  }
+
+  // 6 Верх
+
+  .#{$prefix}Mt {
+    @include m.rulesBreakpoint($container,(
+      margin-top: 0
+    ),'0', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      margin-top: 16px
+    ),'16', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      margin-top: 24px
+    ),'24', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      margin-top: 32px
+    ),'32', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      margin-top: auto
+    ),'auto', $orientation);
+  }
+
+  // 7 Низ
+
+  .#{$prefix}Mb {
+    @include m.rulesBreakpoint($container,(
+      margin-bottom: 0
+    ),'0', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      margin-bottom: 16px
+    ),'16', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      margin-bottom: 24px
+    ),'24', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      margin-bottom: 32px
+    ),'32', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      margin-bottom: auto
+    ),'auto', $orientation);
+  }
+
+}

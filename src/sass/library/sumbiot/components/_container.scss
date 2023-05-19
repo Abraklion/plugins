@@ -1,0 +1,5 @@
+@use "../general/variables" as v;
+@use "../general/mixins/components/container" as mC;
+
+@include mC.container(v.$container,v.$orientation);
+

@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+// Настройка с библиотекой
+
+// Изменить параметры по умолчанию
+@use 'library/sumbiot/general/variables' with (
+  $container: (
+    sm: (breakpoint: 576px, max-width: 540px),
+    md: (breakpoint: 768px, max-width: 720px),
+    lg: (breakpoint: 992px, max-width: 960px),
+    xl: (breakpoint: 1200px, max-width: 1140px)
+  )
+);
+
+// Шрифты
+@use "fonts";
+
+// Библиотека
+@use "library/sumbiot";
+
+// Блоки
+@use "components/loader";
+@use "components/form";
+@use "components/quantity";
+
+
+
+// Настройка без библиотеки
+
+// Шрифты
+//@use "fonts";
+
+// Нормализация css
+//@use "normalize";
+
+// Анимации
+//@use 'animations';
+
+// Базовые настройки
+//@use "core";
+
+// Служебные класы
+//@use "service";
+
+// Блоки
+//@use "components/container";
+
+
+

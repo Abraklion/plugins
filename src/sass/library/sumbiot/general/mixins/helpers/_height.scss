@@ -1,0 +1,44 @@
+@use "../../variables" as v;
+@use ".." as m;
+
+/*
+  Миксин Высота
+ */
+
+@mixin height($container, $orientation: v.$orientation, $prefix: v.$prefix) {
+
+  // 1 Область просмотра
+
+  .#{$prefix}Hv {
+    @include m.rulesBreakpoint($container,(
+      height: 100vh
+    ),'100', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      height: 50vh
+    ),'50', $orientation);
+  }
+
+  .#{$prefix}H {
+
+    // 2 Проценты
+
+    @include m.rulesBreakpoint($container,(
+      height: 100%
+    ),'100', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      height: 50%
+    ),'50', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      height: auto
+    ),'auto', $orientation);
+
+    // 3 Пиксили
+
+    @include m.rulesBreakpoint($container,(
+      height: 50px
+    ),'50px', $orientation);
+  }
+}

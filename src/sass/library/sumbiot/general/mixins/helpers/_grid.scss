@@ -1,0 +1,28 @@
+@use "../../variables" as v;
+@use ".." as m;
+
+/*
+  Миксин Grid
+ */
+
+@mixin grid($container, $orientation: v.$orientation, $prefix: v.$prefix) {
+
+  // 1 Выровнить содержимое сетки по горизонтали
+
+  .#{$prefix}G-justify-items{
+    @include m.rulesBreakpoint($container,(
+      justify-items: left
+    ),'left', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      justify-items: center
+    ),'center', $orientation);
+  }
+
+  .#{$prefix}G-align-self{
+    @include m.rulesBreakpoint($container,(
+      align-self: center
+    ),'center', $orientation);
+  }
+
+}

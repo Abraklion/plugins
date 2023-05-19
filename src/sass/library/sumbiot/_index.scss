@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+// Ядро
+@use 'general';
+
+// Компоненты
+@use 'components';
+
+// Вспомогательные классы
+@import 'helpers';

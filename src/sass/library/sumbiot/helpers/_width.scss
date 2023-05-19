@@ -1,0 +1,8 @@
+@use "../general/variables" as v;
+@use "../general/mixins/helpers/width" as mW;
+
+// region " Ширина "
+
+@include mW.width(v.$container,v.$orientation)
+
+// endregion

@@ -1,0 +1,16 @@
+@use "../../variables" as v;
+@use ".." as m;
+
+/*
+  Миксин Позицианирование
+ */
+
+@mixin position($container, $orientation: v.$orientation, $prefix: v.$prefix) {
+
+  .#{$prefix}P {
+    @include m.rulesBreakpoint($container, (
+      position: relative,
+    ), 'relative', $orientation);
+  }
+
+}

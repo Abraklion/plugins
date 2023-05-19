@@ -1,0 +1,13 @@
+@use "../general/variables" as v;
+@use "../general/mixins/helpers/padding" as mP;
+
+// region " Поля "
+
+@include mP.padding(v.$container,v.$orientation)
+
+// endregion
+
+
+
+
+

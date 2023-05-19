@@ -1,0 +1,200 @@
+@use "sass:map";
+@use "sass:meta";
+@use "sass:color";
+
+@use "../../variables" as v;
+@use "../../function" as f;
+
+/*
+  Миксин Фарма
+ */
+
+@mixin form($container, $orientation: 'mobile-first', $prefix: v.$prefix) {
+
+  $z: 0;
+  $route: 'min';
+
+  @if $orientation == 'desktop-first' {
+    $z: 1;
+    $route: 'max';
+  }
+
+  $black: #181818;
+  $white: #ffffff;
+  $select: #98948a;
+
+  .#{$prefix}Form{
+
+  }
+
+  .#{$prefix}Form__inner{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+
+    grid-column-gap: 24px;
+    grid-row-gap: 24px;
+
+    & > * {
+      grid-column: span 12;
+    }
+
+  }
+
+  .#{$prefix}Form__item{
+
+    &--column {
+      @for $i from 1 through 12 {
+
+        &-#{$i} {
+          grid-column: span $i;
+        }
+
+        @each $key, $val in $container {
+
+          &-#{$key}-#{$i} {
+            @media (#{$route}-width: map.get($val, "breakpoint") - $z) {
+              grid-column: span $i;
+            }
+          }
+
+        }
+
+      }
+    }
+
+    &--order {
+      @for $i from -1 through 10 {
+
+        &-#{$i} {
+          order: $i;
+        }
+
+        @each $key, $val in $container {
+
+          &-#{$key}-#{$i} {
+            @media (#{$route}-width: map.get($val, "breakpoint") - $z) {
+              order: $i;
+            }
+          }
+
+        }
+
+      }
+    }
+
+  }
+
+  .#{$prefix}Form__label{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-left: 1px;
+
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 22px;
+
+    text-transform: uppercase;
+
+    color: color.scale($black, $lightness: 30%);
+  }
+
+  .#{$prefix}Form__input{
+    width: 100%;
+
+    position: relative;
+
+    margin: 0;
+    padding: 12px 9px;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    font-family: "Roboto", sans-serif;
+
+    line-height: 18px;
+
+    color: $black;
+
+    border: 1px solid color.scale($black, $lightness: 70%);
+    border-radius: 2px;
+
+    outline: none;
+    box-shadow: none;
+
+    transition: box-shadow 0.3s ease;
+
+    &::placeholder{
+      color: color.scale($black, $lightness: 70%);
+
+      transition: color 0.3s ease;
+    }
+
+    &:focus{
+      box-shadow: 0 0 0 2px color.scale($black, $lightness: 85%);
+
+      &::placeholder{
+        color: color.scale($black, $lightness: 0%);
+      }
+    }
+
+    &::selection {
+      color: $white; /* Цвет текста */
+      background: $select; /* Цвет фона */
+    }
+
+    //&[type="date"]::-webkit-calendar-picker-indicator{
+    //  // кастомизировал календарь, поменял иконку и вызов календаря происходит по клику во всей области input
+    //  width: auto;
+    //  height: auto;
+    //
+    //  position: absolute;
+    //  top: 0;
+    //  bottom: 0;
+    //  left: 0;
+    //  right: 0;
+    //
+    //  color: transparent;
+    //
+    //  background-color: transparent;
+    //  background-image: url(../img/calendar-icon.svg);
+    //  background-position: right 10px center;
+    //  background-size: 15px;
+    //  background-repeat: no-repeat;
+    //
+    //  opacity: 0.9;
+    //
+    //  cursor: pointer;
+    //}
+  }
+
+  .#{$prefix}Form__checkbox{
+    vertical-align: middle;
+
+    cursor: pointer;
+  }
+
+  .#{$prefix}Form__button{
+
+  }
+
+  .#{$prefix}Form__error{
+    vertical-align: middle;
+
+    padding: 0 8px 0 19px;
+
+    background-image: url(../img/error-icon.svg);
+    background-position: left top 3px;
+    background-size: 13px;
+    background-repeat: no-repeat;
+
+    font-weight: 400;
+    font-size: 11px;
+
+    text-transform: none;
+
+    opacity: 0.8;
+  }
+
+}

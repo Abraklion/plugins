@@ -1,0 +1,8 @@
+@use "../general/variables" as v;
+@use "../general/mixins/helpers/position" as mP;
+
+// region " Позицианирование "
+
+@include mP.position(v.$container,v.$orientation)
+
+// endregion

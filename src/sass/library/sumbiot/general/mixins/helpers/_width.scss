@@ -1,0 +1,40 @@
+@use "../../variables" as v;
+@use ".." as m;
+
+/*
+  Миксин Ширина
+ */
+
+@mixin width($container, $orientation: v.$orientation, $prefix: v.$prefix) {
+
+  // 1 Область просмотра
+
+  .#{$prefix}Wv {
+    @include m.rulesBreakpoint($container,(
+      width: 100vw
+    ),'100', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      width: 50vw
+    ),'50', $orientation);
+  }
+
+  // 2 Проценты
+
+  .#{$prefix}W {
+    @include m.rulesBreakpoint($container,(
+      width: 100%
+    ),'100', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      width: 50%
+    ),'50', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      width: auto
+    ),'auto', $orientation);
+  }
+
+  // endregion
+
+}

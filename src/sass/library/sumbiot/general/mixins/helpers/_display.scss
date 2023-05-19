@@ -1,0 +1,32 @@
+@use "../../variables" as v;
+@use ".." as m;
+
+/*
+  Миксин тип отображения элемента
+ */
+
+@mixin display($container, $orientation: v.$orientation, $prefix: v.$prefix) {
+
+  .#{$prefix}D {
+    @include m.rulesBreakpoint($container,(
+      display: none
+    ),'none', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      display: block
+    ),'block', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      display: inline-block,
+    ),'inline-block', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      display: flex
+    ),'flex', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      display: grid
+    ),'grid', $orientation);
+  }
+
+}

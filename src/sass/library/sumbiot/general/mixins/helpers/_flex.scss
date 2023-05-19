@@ -1,0 +1,47 @@
+@use "../../variables" as v;
+@use ".." as m;
+
+/*
+  Миксин Flex
+ */
+
+@mixin flex($container, $orientation: v.$orientation, $prefix: v.$prefix) {
+
+  // 1 Со всех сторон
+
+  .#{$prefix}F{
+    @include m.rulesBreakpoint($container,(
+      justify-content: center,
+      align-items: center
+    ),'center', $orientation);
+  }
+
+  // 2 По горизонтали
+
+  .#{$prefix}F-justify-content{
+    @include m.rulesBreakpoint($container,(
+      justify-content: center
+    ),'center', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      justify-content: space-between
+    ),'between', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      justify-content: space-around
+    ),'around', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      justify-content: space-evenly
+    ),'evenly', $orientation);
+  }
+
+  // 3 По вертикали
+
+  .#{$prefix}F-align-items{
+    @include m.rulesBreakpoint($container,(
+      align-items: center
+    ),'center', $orientation);
+  }
+
+}

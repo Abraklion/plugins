@@ -1,0 +1,158 @@
+@use "../../variables" as v;
+@use ".." as m;
+
+/*
+  Миксин Поля
+ */
+
+@mixin padding($container, $orientation: v.$orientation, $prefix: v.$prefix) {
+
+  // 1 Со всех сторон
+
+  .#{$prefix}P {
+    @include m.rulesBreakpoint($container,(
+      padding: 0
+    ),'0', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      padding: 16px
+    ),'16', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      padding: 24px
+    ),'24', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      padding: 32px
+    ),'32', $orientation);
+  }
+
+  // 2 Лево - Право
+
+  .#{$prefix}Px {
+    @include m.rulesBreakpoint($container,(
+      padding-left: 0,
+      padding-right: 0
+    ),'0', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      padding-left: 16px,
+      padding-right: 16px
+    ),'16', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      padding-left: 24px,
+      padding-right: 24px
+    ),'24', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      padding-left: 32px,
+      padding-right: 32px
+    ),'32', $orientation);
+  }
+
+  // 3 Верх - Низ
+
+  .#{$prefix}Py {
+    @include m.rulesBreakpoint($container,(
+      padding-top: 0,
+      padding-bottom: 0
+    ),'0', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      padding-top: 16px,
+      padding-bottom: 16px
+    ),'16', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      padding-top: 24px,
+      padding-bottom: 24px
+    ),'24', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      padding-top: 32px,
+      padding-bottom: 32px
+    ),'32', $orientation);
+  }
+
+  // 4 Лево
+
+  .#{$prefix}Pl {
+    @include m.rulesBreakpoint($container,(
+      padding-left: 0
+    ),'0', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      padding-left: 16px
+    ),'16', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      padding-left: 24px
+    ),'24', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      padding-left: 32px
+    ),'32', $orientation);
+  }
+
+  // 5 Право
+
+  .#{$prefix}Pr {
+    @include m.rulesBreakpoint($container,(
+      padding-right: 0
+    ),'0', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      padding-right: 16px
+    ),'16', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      padding-right: 24px
+    ),'24', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      padding-right: 32px
+    ),'32', $orientation);
+  }
+
+  // 6 Верх
+
+  .#{$prefix}Pt {
+    @include m.rulesBreakpoint($container,(
+      padding-top: 0
+    ),'0', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      padding-top: 16px
+    ),'16', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      padding-top: 24px
+    ),'24', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      padding-top: 32px
+    ),'32', $orientation);
+  }
+
+  // 7 Низ
+
+  .#{$prefix}Pb {
+    @include m.rulesBreakpoint($container,(
+      padding-bottom: 0
+    ),'0', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      padding-bottom: 16px
+    ),'16', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      padding-bottom: 24px
+    ),'24', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      padding-bottom: 32px
+    ),'32', $orientation);
+  }
+
+}

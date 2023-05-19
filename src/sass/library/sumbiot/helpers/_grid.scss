@@ -1,0 +1,8 @@
+@use "../general/variables" as v;
+@use "../general/mixins/helpers/grid" as mG;
+
+// region " Grid "
+
+@include mG.grid(v.$container,v.$orientation)
+
+// endregion

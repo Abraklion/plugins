@@ -1,0 +1,24 @@
+@use "../../variables" as v;
+@use ".." as m;
+
+/*
+  Миксин Выравнивая текста по горизонтали
+ */
+
+@mixin text-align($container, $orientation: v.$orientation, $prefix: v.$prefix) {
+
+  .#{$prefix}Text-align {
+    @include m.rulesBreakpoint($container,(
+      text-align: center
+    ), 'center', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      text-align: right
+    ), 'right', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      text-align: left
+    ), 'left', $orientation);
+  }
+
+}

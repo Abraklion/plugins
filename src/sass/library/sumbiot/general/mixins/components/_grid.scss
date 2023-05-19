@@ -1,0 +1,315 @@
+@use "sass:map";
+@use "sass:meta";
+@use "sass:color";
+
+@use "../../variables" as v;
+@use "../../function" as f;
+
+/*
+  Миксин Сетка
+ */
+
+@mixin grid($container, $orientation:'mobile-first', $prefix: v.$prefix) {
+
+  $z: 0;
+  $route: 'min';
+
+  @if $orientation == 'desktop-first' {
+    $z: 1;
+    $route: 'max';
+  }
+
+  // 1 Ряд
+  .#{$prefix}Row {
+    --bs-gutter-x: 24px;
+    --bs-gutter-y: 0;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-0.5 * var(--bs-gutter-x));
+    margin-left: calc(-0.5 * var(--bs-gutter-x));
+
+    & > * {
+      box-sizing: border-box;
+
+      flex-shrink: 0;
+
+      width: 100%;
+      max-width: 100%;
+
+      padding-right: calc(var(--bs-gutter-x) * 0.5);
+      padding-left: calc(var(--bs-gutter-x) * 0.5);
+
+      margin-top: var(--bs-gutter-y);
+    }
+
+    &-cols{
+
+      &-auto > * {
+        flex: 0 0 auto;
+        width: auto;
+      }
+
+      @each $key, $val in $container {
+
+        &-#{$key}-auto > * {
+          @media (#{$route}-width: map.get($val, "breakpoint") - $z) {
+            flex: 0 0 auto;
+            width: auto;
+          }
+        }
+
+      }
+
+      @for $i from 1 through 6 {
+
+        &-#{$i} > * {
+          flex: 0 0 auto;
+          width: f.fun-divide($i);
+        }
+
+        @each $key, $val in $container {
+
+          &-#{$key}-#{$i} > * {
+            @media (#{$route}-width: map.get($val, "breakpoint") - $z) {
+              flex: 0 0 auto;
+              width: f.fun-divide($i);
+            }
+          }
+
+        }
+      }
+
+    }
+  }
+
+  // 2 Колонка
+  .#{$prefix}Col {
+    flex: 1 0 0%;
+
+    @each $key, $val in $container {
+
+      &-#{$key} {
+        @media (#{$route}-width: map.get($val, "breakpoint") - $z) {
+          flex: 1 0 0%;
+        }
+      }
+
+    }
+
+    &-auto {
+      flex: 0 0 auto;
+      width: auto;
+    }
+
+    @each $key, $val in $container {
+
+      &-#{$key}-auto {
+        @media (#{$route}-width: map.get($val, "breakpoint") - $z) {
+          flex: 0 0 auto;
+          width: auto;
+        }
+      }
+
+    }
+
+    @for $i from 1 through 12 {
+
+      &-#{$i} {
+        flex: 0 0 auto;
+        width: f.fun-divide($i,12);
+      }
+
+      @each $key, $val in $container {
+
+        &-#{$key}-#{$i} {
+          @media (#{$route}-width: map.get($val, "breakpoint") - $z) {
+            flex: 0 0 auto;
+            width: f.fun-divide($i,12);
+          }
+        }
+
+      }
+    }
+  }
+
+  // 3 Смещение
+  .#{$prefix}Offset {
+
+    @for $i from 0 through 11 {
+
+      @if $orientation == 'desktop-first' {
+        &-#{$i} {
+          margin-left: f.fun-divide($i,12);
+        }
+      }
+
+      @each $key, $val in $container {
+
+        &-#{$key}-#{$i} {
+          @media (#{$route}-width: map.get($val, "breakpoint") - $z) {
+            margin-left: f.fun-divide($i,12);
+          }
+        }
+
+      }
+    }
+  }
+
+  // 4 Поля
+  .#{$prefix}G {
+
+    @for $i from 0 through 5 {
+
+      &-#{$i} {
+        @include gutterXY($i)
+      }
+
+      @each $key, $val in $container {
+
+        &-#{$key}-#{$i} {
+          @media (#{$route}-width: map.get($val, "breakpoint") - $z) {
+            @include gutterXY($i)
+          }
+        }
+
+      }
+    }
+  }
+
+  .#{$prefix}Gx {
+
+    @for $i from 0 through 5 {
+
+      &-#{$i} {
+        @include gutterX($i)
+      }
+
+      @each $key, $val in $container {
+
+        &-#{$key}-#{$i} {
+          @media (#{$route}-width:  map.get($val, "breakpoint") - $z) {
+            @include gutterX($i)
+          }
+        }
+
+      }
+    }
+  }
+
+  .#{$prefix}Gy {
+
+    @for $i from 0 through 5 {
+
+      &-#{$i} {
+        @include gutterY($i)
+      }
+
+      @each $key, $val in $container {
+
+        &-#{$key}-#{$i} {
+          @media (#{$route}-width:  map.get($val, "breakpoint") - $z) {
+            @include gutterY($i)
+          }
+        }
+
+      }
+    }
+  }
+
+}
+
+@mixin gutterXY($i) {
+
+  @if $i == 0 {
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
+  }
+
+  @if $i == 1 {
+    --bs-gutter-x: 4px;
+    --bs-gutter-y: 4px;
+  }
+
+  @if $i == 2 {
+    --bs-gutter-x: 8px;
+    --bs-gutter-y: 8px;
+
+  }
+
+  @if $i == 3 {
+    --bs-gutter-x: 16px;
+    --bs-gutter-y: 16px;
+
+  }
+
+  @if $i == 4 {
+    --bs-gutter-x: 24px;
+    --bs-gutter-y: 24px;
+  }
+
+  @if $i == 5 {
+    --bs-gutter-x: 48px;
+    --bs-gutter-y: 48px;
+  }
+
+}
+
+@mixin gutterX($i) {
+
+  @if $i == 0 {
+    --bs-gutter-x: 0;
+  }
+
+  @if $i == 1 {
+    --bs-gutter-x: 4px;
+  }
+
+  @if $i == 2 {
+    --bs-gutter-x: 8px;
+  }
+
+  @if $i == 3 {
+    --bs-gutter-x: 16px;
+
+  }
+
+  @if $i == 4 {
+    --bs-gutter-x: 24px;
+  }
+
+  @if $i == 5 {
+    --bs-gutter-x: 48px;
+  }
+
+}
+
+@mixin gutterY($i) {
+
+  @if $i == 0 {
+    --bs-gutter-y: 0;
+  }
+
+  @if $i == 1 {
+    --bs-gutter-y: 4px;
+  }
+
+  @if $i == 2 {
+    --bs-gutter-y: 8px;
+  }
+
+  @if $i == 3 {
+    --bs-gutter-y: 16px;
+  }
+
+  @if $i == 4 {
+    --bs-gutter-y: 24px;
+  }
+
+  @if $i == 5 {
+    --bs-gutter-y: 48px;
+  }
+
+}

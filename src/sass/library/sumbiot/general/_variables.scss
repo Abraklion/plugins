@@ -1,0 +1,63 @@
+
+//-----===== Базовые переменные ====-----//
+
+// префикс классов при обращении к библиотеки
+$prefix: 's'!default;
+
+// Стили шрифтов по умолчанию
+$font-style-basic: normal !default;
+$font-weight-basic: 400 !default;
+$font-size-basic: 16px !default;
+$font-family-basic: "Roboto", sans-serif !default;
+
+$line-height-basic: 1.5 !default;
+
+// метод разработки " mobile-first | desktop-first"
+$orientation: 'mobile-first' !default;
+
+// максимальная ширина контейнера для desktop-first
+$width-container: 1200px !default;
+
+// Контрольные точки
+$container: (
+  sm: (breakpoint: 576px, max-width: 540px),
+  md: (breakpoint: 768px, max-width: 720px),
+  lg: (breakpoint: 992px, max-width: 960px),
+  xl: (breakpoint: 1200px, max-width: 1140px),
+  xxl: (breakpoint: 1400px, max-width: 1320px)
+) !default;
+
+// от белого к черному
+$white:         #fff !default;
+$gray-100:      #f8f9fa !default;
+$gray-200:      #e9ecef !default;
+$gray-300:      #dee2e6 !default;
+$gray-400:      #ced4da !default;
+$gray-500:      #adb5bd !default;
+$gray-600:      #6c757d !default;
+$gray-700:      #495057 !default;
+$gray-800:      #343a40 !default;
+$gray-900:      #212529 !default;
+$black:         #000 !default;
+
+// цвета
+$blue:          #0d6efd !default;
+$indigo:        #6610f2 !default;
+$purple:        #6f42c1 !default;
+$pink:          #d63384 !default;
+$red:           #dc3545 !default;
+$orange:        #fd7e14 !default;
+$yellow:        #ffc107 !default;
+$green:         #198754 !default;
+$teal:          #20c997 !default;
+$cyan:          #0dcaf0 !default;
+
+// темы цветов
+$primary:       $blue !default;
+$secondary:     $gray-600 !default;
+$success:       $green !default;
+$info:          $cyan !default;
+$warning:       $yellow !default;
+$danger:        $red !default;
+$light:         $gray-100 !default;
+$dark:          $gray-900 !default;

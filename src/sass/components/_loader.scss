@@ -1,0 +1,64 @@
+@use "sass:color";
+
+$color: #f5f5f5;
+
+.loader{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  background-color: rgba($color,0.9);
+
+  text-align: center;
+
+  &--size{
+    position: static;
+
+    max-width: 600px;
+    min-height: 260px;
+
+    margin: 30px auto 0;
+
+    border-radius: 4px;
+  }
+
+  &--line{
+    flex-direction: row;
+
+    .loader__img{
+      width: 34px;
+
+      margin-right: 7px;
+      margin-bottom: 0;
+    }
+
+    .loader__massage{
+      text-transform: none;
+    }
+  }
+}
+
+.loader__img{
+  display: block;
+
+  width: 34px;
+  height: auto;
+
+  background-color: transparent;
+
+  margin-bottom: 10px;
+}
+
+.loader__massage{
+  margin: 0;
+
+  font-weight: 400;
+  font-size: 15px;
+}

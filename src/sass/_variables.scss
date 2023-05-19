@@ -1,0 +1,27 @@
+//-----===== Базовые переменные ====-----//
+
+// Стили шрифтов по умолчанию
+$font-style-basic: normal;
+$font-weight-basic: 400;
+$font-size-basic: 16px;
+$font-family-basic: "Arial", sans-serif;
+
+$line-height-basic: 1.5;
+
+// метод разработки " mobile-first | desktop-first"
+$orientation: 'mobile-first';
+// максимальная ширина контейнера для desktop-first
+$width-container: 1200px;
+
+// Контрольные точки
+$container: (
+  sm: (breakpoint: 576px, max-width: 540px),
+  md: (breakpoint: 768px, max-width: 720px),
+  lg: (breakpoint: 992px, max-width: 960px),
+  xl: (breakpoint: 1200px, max-width: 1140px),
+  xxl: (breakpoint: 1400px, max-width: 1320px)
+);
+
+// Цвета
+$white: #ffffff;
+$black: #000000;

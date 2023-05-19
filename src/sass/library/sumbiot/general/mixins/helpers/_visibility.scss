@@ -1,0 +1,20 @@
+@use "../../variables" as v;
+@use ".." as m;
+
+/*
+  Миксин Отображения или скрытия элемента
+ */
+
+@mixin visibility($container, $orientation: v.$orientation, $prefix: v.$prefix) {
+
+  .#{$prefix}V {
+    @include m.rulesBreakpoint($container,(
+      visibility: hidden
+    ),'hidden', $orientation);
+
+    @include m.rulesBreakpoint($container,(
+      visibility: visible
+    ),'visible', $orientation);
+  }
+
+}
