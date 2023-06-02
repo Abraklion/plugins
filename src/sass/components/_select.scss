@@ -1,0 +1,50 @@
+
+.select{
+  height: auto!important;
+
+  padding: 7px 0 12px 0!important;
+
+  line-height: 20px!important;
+
+  border-radius: 2px!important;
+
+  &:not(.select2-selection--clearable) {
+    padding-top: 12px!important;
+  }
+
+  .select2-selection__rendered{
+    font-size: 16px!important;
+    line-height: 20px!important;
+  }
+
+  .select2-selection__arrow{
+    top: 9px!important;
+  }
+
+  .select2-search__field{
+    margin-top: 0!important;
+  }
+
+  .select2-selection__choice{
+    padding-top: 4px!important;
+    padding-bottom: 4px!important;
+  }
+
+  .select2-selection__choice__remove{
+    height: 100%!important;
+  }
+
+  .select2-selection__clear{
+    margin-top: 9px!important;
+  }
+
+}
+
+.select-dropdown {
+  border-bottom-left-radius: 2px!important;
+  border-bottom-right-radius: 2px!important;
+
+  .select2-results__option--highlighted{
+    background-color: #757575!important;
+  }
+}

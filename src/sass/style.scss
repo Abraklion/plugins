@@ -15,14 +15,17 @@
 // Шрифты
 @use "fonts";
 
+// Сторонние библиотеки
+@use "select2/dist/css/select2.min"; // -> кастомные селекты
+
 // Библиотека
 @use "library/sumbiot";
 
 // Блоки
 @use "components/loader";
 @use "components/form";
+@use "components/select";
 @use "components/quantity";
-
 
 
 // Настройка без библиотеки

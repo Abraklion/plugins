@@ -1,0 +1,188 @@
+---
+layout: default
+
+title: Select2.org
+description: https://select2.org
+
+link: style.min.css
+script: ['runtime.js', 'jquery.js', 'jquery-validation.js', 'select2.js', 'select.js']
+
+lottiePlayer: false
+---
+
+<div class="sContainer">
+
+  <h3 class="sText-align-center sText-color-dark">Добавить удостоверения</h3>
+
+  <!-- Верстка компонента -->
+  <form class="sForm sMt-32" id="myForm" action="" method="post">
+
+    <div class="sForm__inner">
+
+      <label class="sForm__item sForm__item--column-md-6">
+        <span class="sForm__label">Дата аттестации:</span>
+        <input class="sForm__input" type="date" name="attestation_date">
+      </label>
+
+      <label class="sForm__item sForm__item--column-md-6">
+        <span class="sForm__label">Дата следующий аттестации:</span>
+        <input class="sForm__input" type="date" name="next_attestation_date">
+      </label>
+
+    </div><!--./sForm__inner-->
+
+
+    <div class="sForm__inner sMt-16">
+
+      <h3 class="sForm__item sM-0 sText-color-dark">Стандартный SELECT2</h3>
+
+      <!-- Конфигурация №1 (стандарт) -->
+      <label class="sForm__item sForm__item--column-md-6">
+        <span class="sForm__label">Дивизион:</span>
+
+        <select class="sForm__select select-division" name="division"></select>
+      </label>
+
+      <!-- Конфигурация №2 (стандарт) -->
+      <label class="sForm__item sForm__item--column-md-6">
+        <span class="sForm__label">Отдел:</span>
+
+        <select class="sForm__select select-department" name="department">
+          <option value=""></option>
+          <option value="1">Коммерческий отдел</option>
+          <option value="2">Отдел технической поддержки</option>
+          <option value="3">Отдел поддержки клиентов</option>
+          <option value="4">Отдел информационных технологий</option>
+          <option value="5">Отдел продаж</option>
+          <option value="6">Отдел маркетинга</option>
+          <option value="7">Служба рассылки, экспедиция</option>
+          <option value="8">Сборочный цех</option>
+          <option value="9">Склад</option>
+          <option value="10">Штаб-квартира</option>
+        </select>
+      </label>
+
+    </div><!--./sForm__inner-->
+
+
+    <div class="sForm__inner sMt-16">
+
+      <h3 class="sForm__item sM-0 sText-color-dark">Множественным выбор SELECT2</h3>
+
+      <!-- Конфигурация №3 (множественным выбор) -->
+      <label class="sForm__item">
+        <span class="sForm__label">Должность:</span>
+
+        <select class="sForm__select select-post" multiple name="post">
+          <option value="1">Генеральный директор</option>
+          <option value="2">Исполнительный директор</option>
+          <option value="3">Финансовый директор</option>
+          <option value="4">Коммерческий директор</option>
+          <option value="5">Директор по персоналу</option>
+          <option value="6">Директор по маркетингу</option>
+          <option value="7">Директор по логистике</option>
+          <option value="8">Операционный директор розничной сети</option>
+          <option value="9">Директор филиала</option>
+          <option value="10">Технический директор</option>
+        </select>
+      </label>
+
+    </div><!--./sForm__inner-->
+
+
+    <div class="sForm__inner sMt-16">
+
+      <h3 class="sForm__item sM-0 sText-color-dark">Через data-атрибуты SELECT2</h3>
+
+      <!-- Конфигурация №4 (через data-атрибуты) -->
+      <!-- оф дока: https://select2.org/configuration/data-attributes -->
+      <label class="sForm__item">
+        <span class="sForm__label">Аттестат:</span>
+
+        <select class="sForm__select select-certificate"
+                name="certificate"
+
+                data-placeholder="выберите аттестат"
+                data-close-on-select="true"
+                data-allow-clear="true"
+
+                multiple
+        >
+          <option value="1">Строительный</option>
+          <option value="2">Технический</option>
+          <option value="3">Аграрный</option>
+          <option value="4">Экономический</option>
+          <option value="5">Медицинский</option>
+          <option value="6">Юридический</option>
+          <option value="7">Педагогический</option>
+        </select>
+      </label>
+
+    </div><!--./sForm__inner-->
+
+
+    <div class="sForm__inner sMt-16">
+
+      <h3 class="sForm__item sM-0 sText-color-dark">Через Ajax c сервера SELECT2</h3>
+
+      <!-- Конфигурация №5 (Ajax множественным выбор) -->
+      <label class="sForm__item sForm__item--column-md-6">
+        <span class="sForm__label">Разряд:</span>
+
+        <select class="sForm__select js-select-class" name="class" data-placeholder="выберите разряд" multiple></select>
+      </label>
+
+      <!-- Конфигурация №6 (Ajax) -->
+      <label class="sForm__item sForm__item--column-md-6">
+        <span class="sForm__label">Стаж:</span>
+
+        <select class="sForm__select js-select-age" name="age" data-placeholder="выберите стаж"></select>
+      </label>
+
+    </div><!--./sForm__inner-->
+
+
+    <div class="sForm__inner sMt-16">
+
+      <h3 class="sForm__item sM-0 sText-color-dark">Выбор в первом списки влияет на второй | SELECT2</h3>
+
+      <!-- Конфигурация №7 (SelectA выбор в этом списки) -->
+      <label class="sForm__item sForm__item--column-md-6">
+        <span class="sForm__label">Дополнительно:</span>
+
+        <select class="sForm__select select-additions" name="additions">
+          <option value=""></option>
+          <option value="1">Группа крови</option>
+          <option value="2">Семейное положения</option>
+          <option value="3">Место жительство</option>
+        </select>
+      </label>
+
+      <!-- Конфигурация №8 (SelectB влияет на этот список)-->
+      <label class="sForm__item sForm__item--column-md-6">
+        <span class="sForm__label">Значение:</span>
+
+        <select class="sForm__select select-value" name="value">
+          <option value=""></option>
+        </select>
+      </label>
+
+    </div><!--./sForm__inner-->
+
+
+    <div class="sForm__inner sMt-16">
+
+      <div class="sForm__item sForm__item--column-md-2 sForm__item--order-md-6">
+        <button class="sForm__button sBtn sBtn-primary" type="submit" name="btn_add_card">Добавить</button>
+      </div>
+
+      <div class="sForm__item sForm__item--column-md-10 sForm__item--order-md-6 sG-align-self-center">
+        <span class="quantity"></span>
+      </div>
+
+    </div><!--./sForm__inner-->
+
+  </form><!--./form-->
+
+
+</div>

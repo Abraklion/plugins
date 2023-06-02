@@ -33,8 +33,12 @@
 
   }
 
+  &--no-color{
+    background-color: transparent!important;
+  }
+
 }
 
 .sForm__valid {
-  background-color: #f8fef5;
+  background-color: #f8fef5!important;
 }

@@ -8,14 +8,28 @@ module.exports = function () {
       .pipe($.webpack({
         mode: $.config.toggle.mode,
         entry : {
+
+          // валидатор форм
           validation: {
             import: './src/js/jqueryvalidation.js',
-            dependOn: ['jquery-validation'],
+            dependOn: ['jquery-validation']
           },
           'jquery-validation' : {
             import : ['jquery-validation', 'jquery-validation/dist/additional-methods'],
             dependOn: ['jquery'],
           },
+
+          // кастомный селект
+          select: {
+            import: './src/js/select2.js',
+            dependOn: ['select2','jquery-validation']
+          },
+          'select2' : {
+            import : 'select2',
+            dependOn: ['jquery'],
+          },
+
+
           'jquery': 'jquery',
         },
         output: {

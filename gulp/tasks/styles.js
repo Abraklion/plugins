@@ -6,7 +6,9 @@ module.exports = function () {
 
     return $.gulp.src($.config.paths.css)
 
-      .pipe($.sass().on('error', $.sass.logError))
+      .pipe($.sass({
+        includePaths: ['node_modules']
+      }).on('error', $.sass.logError))
       .pipe($.gp.postcss([$.autoprefixer()]))
       .pipe($.gp.groupCssMediaQueries())
       .pipe($.gp.cssbeautify())

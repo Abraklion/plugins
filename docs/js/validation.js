@@ -220,10 +220,6 @@ class FormComponent extends _core_component__WEBPACK_IMPORTED_MODULE_2__["defaul
         },
         department: {
           required: true
-        },
-        asd: {
-          required: true,
-          accept: "audio/*"
         }
       },
       // -> настройка пользовательских сообщений (для валидируемых полей)
@@ -270,6 +266,20 @@ class FormComponent extends _core_component__WEBPACK_IMPORTED_MODULE_2__["defaul
 
         error.appendTo(element.prev());
       },
+      // переопределяет стили невалидных полей
+      // highlight: function(element, errorClass, validClass) {
+      //   $(element).addClass(errorClass).removeClass(validClass);
+      //   $(element.form).find("label[for=" + element.id + "]")
+      //     .addClass(errorClass);
+      // },
+
+      // отмены изменений, сделанных опцией highlight
+      // unhighlight: function(element, errorClass, validClass) {
+      //   $(element).removeClass(errorClass).addClass(validClass);
+      //   $(element.form).find("label[for=" + element.id + "]")
+      //     .removeClass(errorClass);
+      // },
+
       // -> если форма валидна и готова в отпраке на сервер, попадаем в этот обработчик
       // submitHandler: function(form,e) {
       //   // https://jqueryvalidation.org/category/plugin/#submithandler - оф дока
