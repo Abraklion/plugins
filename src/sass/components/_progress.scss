@@ -1,0 +1,23 @@
+
+.loading {
+
+  img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+  }
+
+  &--text {
+    padding: 10px 0 0 0;
+  }
+
+  &--img {
+    height: 100%;
+
+    padding: 5px 0 0 0;
+  }
+
+}

@@ -11,3 +11,8 @@
     - Пример: [тут](https://abraklion.github.io/plugins/select2.html)
     - Код: [HTML](./src/select2.html) / [SCSS](./src/sass/style.scss) / [JS](./src/js/select2.js)
     - Видео: [№1](https://www.youtube.com/watch?v=gTNQOxvuUv0&ab_channel=LaravelPackageTutorial)
+
+- **Состояние**
+  - `Js` **[progress.js](https://github.com/usablica/progress.js)** - прогресс загрузки объекта
+    - Пример: [тут](https://abraklion.github.io/plugins/progressJs.html)
+    - Код: [HTML](./src/progressJs.html) / [SCSS](./src/sass/style.scss) / [JS](./src/js/progressJs.js)

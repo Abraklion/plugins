@@ -15,13 +15,15 @@
 // Шрифты
 @use "fonts";
 
-// Сторонние библиотеки
-@use "select2/dist/css/select2.min"; // -> кастомные селекты
+// Библиотеки из node_modules
+@use "select2/dist/css/select2.min"; //-> кастомные селекты
 
-// Библиотека
-@use "library/sumbiot";
+// Библиотеки локальные
+@use "library/progressJs/progressJs"; //-> прогресс загрузки
+@use "library/sumbiot"; //-> кастомный бутстрап
 
 // Блоки
+@use "components/progress";
 @use "components/loader";
 @use "components/form";
 @use "components/select";
@@ -42,7 +44,7 @@
 // Базовые настройки
 //@use "core";
 
-// Служебные класы
+// Служебные классы
 //@use "service";
 
 // Блоки

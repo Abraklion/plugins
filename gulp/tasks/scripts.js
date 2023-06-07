@@ -29,6 +29,10 @@ module.exports = function () {
             dependOn: ['jquery'],
           },
 
+          // прогресс выполнения
+          progress: {
+            import: './src/js/progressJs.js'
+          },
 
           'jquery': 'jquery',
         },
