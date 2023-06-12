@@ -65,6 +65,7 @@
   "dependencies": {
     "jquery": "^3.7.0",
     "jquery-validation": "^1.19.5",
-    "select2": "^4.1.0-rc.0"
+    "select2": "^4.1.0-rc.0",
+    "tooltipster": "^4.2.8"
   }
 }

@@ -1,0 +1,271 @@
+---
+layout: default
+
+title: Tooltipster
+description: http://calebjacob.github.io/tooltipster/#getting-started
+
+link: style.min.css
+script: ['runtime.js', 'jquery.js', 'tooltipster.js']
+
+lottiePlayer: false
+---
+
+<div class="sContainer">
+
+<h2 class="sText-align-center">Tooltipster (всплывающая подсказка)</h2>
+
+<h4>Инициализация:</h4>
+<div class="sRow sF-align-items-center" style="border-bottom: 1px solid black;">
+<div class="sCol-6 sPy-16">
+<button class="sBtn sBtn-primary sD-block sMx-auto sW-25 js-tooltip-1" type="button" title="Кастомная всплывающая подсказка">Наведи</button>
+</div>
+<div class="sCol-6 sPy-16">
+Код:
+<pre>
+$('.js-tooltip-1').tooltipster()</pre>
+</div>
+</div>
+
+<h4>Стиль подсказок:</h4>
+<div class="sRow sF-align-items-center" style="border-bottom: 1px solid black;">
+<div class="sCol-6 sPy-16">
+  <button class="sBtn sBtn-primary sD-block sMx-auto sW-25 js-tooltip-1" type="button" title="Кастомная всплывающая по умолчанию">Default</button>
+</div>
+<div class="sCol-6 sPy-16">
+Код:
+<pre>
+$('.js-tooltip-1').tooltipster()</pre>
+</div>
+<div class="sCol-6 sPy-16">
+  <button class="sBtn sBtn-primary sD-block sMx-auto sW-25 js-tooltip-2" type="button" title="Кастомная всплывающая тема Light">Light</button>
+</div>
+<div class="sCol-6 sPy-16">
+Код:
+<pre>
+$('.js-tooltip-2').tooltipster({
+  theme: 'tooltipster-light'
+})</pre>
+</div>
+<div class="sCol-6 sPy-16">
+  <button class="sBtn sBtn-primary sD-block sMx-auto sW-25 js-tooltip-3" type="button" title="Кастомная всплывающая тема Borderless">Borderless</button>
+</div>
+<div class="sCol-6 sPy-16">
+Код:
+<pre>
+$('.js-tooltip-3').tooltipster({
+  theme: 'tooltipster-borderless'
+})</pre>
+</div>
+<div class="sCol-6 sPy-16">
+  <button class="sBtn sBtn-primary sD-block sMx-auto sW-25 js-tooltip-4" type="button" title="Кастомная всплывающая тема Noir">Noir</button>
+</div>
+<div class="sCol-6 sPy-16">
+Код:
+<pre>
+$('.js-tooltip-4').tooltipster({
+  theme: 'tooltipster-noir'
+})</pre>
+</div>
+<div class="sCol-6 sPy-16">
+  <button class="sBtn sBtn-primary sD-block sMx-auto sW-25 js-tooltip-5" type="button" title="Кастомная всплывающая тема Punk">Punk</button>
+</div>
+<div class="sCol-6 sPy-16">
+Код:
+<pre>
+$('.js-tooltip-5').tooltipster({
+  theme: 'tooltipster-punk'
+})</pre>
+</div>
+<div class="sCol-6 sPy-16">
+  <button class="sBtn sBtn-primary sD-block sMx-auto sW-25 js-tooltip-6" type="button" title="Кастомная всплывающая тема Shadow">Shadow</button>
+</div>
+<div class="sCol-6 sPy-16">
+Код:
+<pre>
+$('.js-tooltip-6').tooltipster({
+  theme: 'tooltipster-shadow'
+})</pre>
+</div>
+</div>
+
+<h4>HTML внутри всплывающих подсказок:</h4>
+<div class="sRow sF-align-items-center" style="border-bottom: 1px solid black;">
+<div class="sCol-6 sPy-16">
+  <button class="sBtn sBtn-primary sD-block sMx-auto sW-25 js-tooltip-7" data-tooltip-content="#tooltip_content" type="button">Наведи</button>
+
+  <div class="tooltip_templates hide">
+    <span id="tooltip_content">
+      <img src="https://wallpaperfx.com/view_image/ferrari-488-gtb-front-view-1280x1024-wallpaper-16856.jpg" width="100" alt="" style="float: left; margin-right: 10px;">
+      <strong style="vertical-align: middle">Это содержание моей всплывающей подсказки!</strong>
+    </span>
+  </div>
+</div>
+<div class="sCol-6 sPy-16">
+Код:
+<pre>
+$('.js-tooltip-7').tooltipster({
+    contentCloning : true
+})</pre>
+</div>
+</div>
+
+<h4>Параметры:</h4>
+<div class="sRow sF-align-items-center" style="border-bottom: 1px solid black;">
+<div class="sCol-4 sPy-16">
+  <button class="sBtn sBtn-primary sD-block sMx-auto js-tooltip-8" type="button" title="Кастомная всплывающая подсказка">Наведи</button>
+</div>
+<div class="sCol-8 sPy-16">
+  Код:
+  <pre>
+$('.js-tooltip-8').tooltipster({
+  debug: true, //-> отладка.
+
+  trigger: 'click', //-> событие открывающие подсказку
+
+  animation: 'grow', //-> анимация.
+  animationDuration: [350,350], //-> скорость анимации.
+  delay: [300,300], //-> задержка перед.
+  delayTouch: [300,500], //-> задержка перед с сенсора.
+
+  updateAnimation: 'rotate', //-> анимация при изменения content
+  timer: 0, //-> существования подсказки перед закрытием.
+
+  theme: 'tooltipster-punk',  //-> тема.
+
+  content: null, //-> задать текст подсказки параметром.
+  contentAsHTML: false, //-> если не надо экранировать HTML в content.
+  contentCloning: false, //-> клонирования элемента посказки.
+
+  restoration: 'none', //-> восстанавливает атрибут TITLE.
+  selfDestruction: true, //-> должна ли подсказка самоуничтожаться из DOM.
+
+  interactive: true, //-> взаимодействовать с содержимым подсказки.
+  multiple: false, //-> разместить несколько подсказок на одном элементе.
+
+  side: 'top', //-> сторона всплывающей подсказки.
+  maxWidth: null, //-> максимальная ширина подсказки.
+  minWidth: 0, //-> минимальную ширину подсказки.
+  distance: 6, //-> расстояние между элементом и подсказкой.
+  repositionOnScroll: false,//-> перемещает всплывающую подсказку.
+  arrow: true, //-> стрелка к подсказки.
+  zIndex: 9999999, //-> позиц. по оси Z.
+
+  triggerClose: {}, //-> переопредилить события открытия подсказки.
+  triggerOpen: {}, //-> переопредилить события закрытия подсказки.
+
+  viewportAware: true, //-> полностью видна на экране при открытии.
+
+  functionInit: null, //-> запускаться при создании экземпляра.
+  functionBefore: null, //-> запускаться до открытия подсказки.
+  functionReady: null, //-> запускаться когда подсказка добавлена в DOM.
+  functionAfter: null, //-> запускаться подсказка закрыта и удалена из DOM.
+  functionFormat: null, //-> форматировать content.
+  functionPosition: null, //-> запускаться изменении положения подсказки.
+})</pre>
+</div>
+</div>
+
+<h4>Методы:</h4>
+
+
+<div class="sRow sF-align-items-center" style="border-bottom: 1px solid black;">
+
+<h5>Методы "open" открывает подсказку:</h5>
+<div class="sCol-6 sPy-16">
+  <button class="sBtn sBtn-primary sD-block sMx-auto js-tooltip-9" type="button" title="Кастомная всплывающая">Позсказка</button>
+</div>
+<div class="sCol-6 sPy-16">
+  Код:
+  <pre>
+let $tooltip9 = $('.js-tooltip-9')
+
+$tooltip9
+  .tooltipster()
+  .tooltipster('open')</pre>
+</div>
+
+<h5>Методы "close" закрывает подсказку:</h5>
+<div class="sCol-3 sPy-16">
+  <button class="sBtn sBtn-primary sD-block sMx-auto js-tooltip-10" type="button" title="Кастомная всплывающая">Подсказка</button>
+</div>
+<div class="sCol-3 sPy-16">
+  <button class="sBtn sBtn-primary sD-block sMx-auto js-btn-1" type="button">Закрыть</button>
+</div>
+<div class="sCol-6 sPy-16">
+  Код:
+  <pre>
+let $tooltip9 = $('.js-tooltip-9')
+
+$tooltip9
+  .tooltipster()
+  .tooltipster('open')</pre>
+</div>
+
+<h5>Методы "content(сеттер)" / "content(геттер)" обновляет содержимое всплывающей подсказки:</h5>
+<div class="sCol-6 sPy-16">
+  <button class="sBtn sBtn-primary sD-block sMx-auto js-tooltip-11" type="button" title="Кастомная всплывающая">Подсказка</button>
+</div>
+<div class="sCol-6 sPy-16">
+  Код:
+  <pre>
+let $tooltip11 = $('.js-tooltip-11')
+
+$tooltip11.tooltipster()
+
+$tooltip11
+  .tooltipster('content','Новое содержимое подсказки')
+
+console.log($tooltip11.tooltipster('content'))</pre>
+</div>
+
+<h5>Методы "destroy" закрывает и уничтожает функциональность всплывающей подсказки:</h5>
+<div class="sCol-3 sPy-16">
+  <button class="sBtn sBtn-primary sD-block sMx-auto js-tooltip-12" type="button" title="Кастомная всплывающая">Подсказка</button>
+</div>
+<div class="sCol-3 sPy-16">
+  <button class="sBtn sBtn-primary sD-block sMx-auto js-btn-2" type="button">Уничтожить</button>
+</div>
+<div class="sCol-6 sPy-16">
+  Код:
+  <pre>
+let $tooltip12 = $('.js-tooltip-12')
+
+$tooltip12.tooltipster()
+
+$('.js-btn-2').on('click', () => {
+  $tooltip12.tooltipster('destroy')
+})</pre>
+</div>
+
+<h5>Методы "disable/enable" отключить и включить всплывающию подсказку:</h5>
+<div class="sCol-3 sPy-16">
+  <button class="sBtn sBtn-primary sD-block sMx-auto js-tooltip-13" type="button" title="Кастомная всплывающая">Подсказка</button>
+</div>
+<div class="sCol-3 sPy-16">
+  <button class="sBtn sBtn-primary sD-block sMx-auto js-btn-3" type="button">Отключить</button>
+</div>
+<div class="sCol-6 sPy-16">
+  Код:
+  <pre>
+let $tooltip13 = $('.js-tooltip-13')
+
+$tooltip13.tooltipster()
+
+$('.js-btn-3').on('click', function () {
+
+  let $this = $(this)
+
+  if($this.text() === 'Отключить') {
+    $tooltip13.tooltipster('disable')
+    $this.text('Включить')
+  } else {
+    $tooltip13.tooltipster('enable')
+    $this.text('Отключить')
+  }
+
+})</pre>
+</div>
+
+</div>
+
+</div>

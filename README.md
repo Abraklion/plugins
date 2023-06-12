@@ -16,3 +16,8 @@
   - `Js` **[progress.js](https://github.com/usablica/progress.js)** - прогресс загрузки объекта
     - Пример: [тут](https://abraklion.github.io/plugins/progressJs.html)
     - Код: [HTML](./src/progressJs.html) / [SCSS](./src/sass/style.scss) / [JS](./src/js/progressJs.js)
+
+- **Всплывающие подсказки**
+  - `Jq` **[tooltipster](https://calebjacob.github.io/tooltipster)** - кастомные подсказки
+    - Пример: [тут](https://abraklion.github.io/plugins/tooltipster.html)
+    - Код: [HTML](./src/tooltipster.html) / [SCSS](./src/sass/style.scss) / [JS](./src/js/tooltipster.js)

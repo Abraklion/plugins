@@ -34,6 +34,12 @@ module.exports = function () {
             import: './src/js/progressJs.js'
           },
 
+          // всплывающая подсказка
+          tooltipster: {
+            import: './src/js/tooltipster.js',
+            dependOn: ['jquery'],
+          },
+
           'jquery': 'jquery',
         },
         output: {

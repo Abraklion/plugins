@@ -1,3 +1,4 @@
+@use "select2/dist/css/select2.min"; //-> кастомные селекты (подключение стилей библиотеки select2 из node_modules)
 
 .select{
   height: auto!important;

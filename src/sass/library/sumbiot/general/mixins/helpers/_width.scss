@@ -31,6 +31,10 @@
     ),'50', $orientation);
 
     @include m.rulesBreakpoint($container,(
+      width: 25%
+    ),'25', $orientation);
+
+    @include m.rulesBreakpoint($container,(
       width: auto
     ),'auto', $orientation);
   }

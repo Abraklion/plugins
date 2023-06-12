@@ -1,0 +1,6 @@
+@use "tooltipster/dist/css/tooltipster.bundle.css"; //-> всплывающая подсказка (подключение стилей библиотеки tooltipster из node_modules)
+@use "tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-light.min.css"; //-> темы для всплывающих подсказок
+@use "tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-borderless.min.css"; //-> темы для всплывающих подсказок
+@use "tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-noir.min.css"; //-> темы для всплывающих подсказок
+@use "tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-punk.min.css"; //-> темы для всплывающих подсказок
+@use "tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-shadow.min.css"; //-> темы для всплывающих подсказок

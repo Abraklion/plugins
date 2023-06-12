@@ -15,18 +15,17 @@
 // Шрифты
 @use "fonts";
 
-// Библиотеки из node_modules
-@use "select2/dist/css/select2.min"; //-> кастомные селекты
-
 // Библиотеки локальные
-@use "library/progressJs/progressJs"; //-> прогресс загрузки
 @use "library/sumbiot"; //-> кастомный бутстрап
+@use "components/progress"; //-> прогресс загрузки
+
+// Библиотеки из node_modules
+@use "components/select2"; //-> кастомные селекты
+@use "components/tooltipster"; //-> кастомные всплывающие подсказки
 
 // Блоки
-@use "components/progress";
 @use "components/loader";
 @use "components/form";
-@use "components/select";
 @use "components/quantity";
 
 
@@ -49,6 +48,4 @@
 
 // Блоки
 //@use "components/container";
-
-
 
