@@ -16,6 +16,9 @@
   - `Js` **[progress.js](https://github.com/usablica/progress.js)** - прогресс загрузки объекта
     - Пример: [тут](https://abraklion.github.io/plugins/progressJs.html)
     - Код: [HTML](./src/progressJs.html) / [SCSS](./src/sass/style.scss) / [JS](./src/js/progressJs.js)
+  - `Js` **[fitVids.js](http://fitvidsjs.com/)** - адаптивное видео
+    - Пример: [тут](https://abraklion.github.io/plugins/fitvids.html)
+    - Код: [HTML](./src/fitvids.html) / [SCSS](./src/sass/style.scss) / [JS](./src/js/fitvidsJs.js)
 
 - **Всплывающие подсказки**
   - `Jq` **[tooltipster](https://calebjacob.github.io/tooltipster)** - кастомные подсказки

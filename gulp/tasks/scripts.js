@@ -40,6 +40,12 @@ module.exports = function () {
             dependOn: ['jquery'],
           },
 
+          // адаптивное видео
+          fitvids: {
+            import: './src/js/fitvidsJs.js',
+            dependOn: ['jquery'],
+          },
+
           'jquery': 'jquery',
         },
         output: {
@@ -55,6 +61,7 @@ module.exports = function () {
         devtool: 'source-map',
         module: {
           rules: [
+            // ДЛЯ JS
             {
               test: /\.m?js$/,
               exclude: /(node_modules|bower_components)/,
@@ -68,7 +75,16 @@ module.exports = function () {
                   }]]
                 }
               }
-            }
+            },
+
+            // делает jquery модуль глобальным
+            {
+              test: require.resolve("jquery"),
+              loader: "expose-loader",
+              options: {
+                exposes: ["$", "jQuery"],
+              },
+            },
           ]
         }
       }))

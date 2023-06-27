@@ -17,11 +17,11 @@
 
 // Библиотеки локальные
 @use "library/sumbiot"; //-> кастомный бутстрап
-@use "components/progress"; //-> прогресс загрузки
 
-// Библиотеки из node_modules
+// Библиотеки из node_modules и vendor
 @use "components/select2"; //-> кастомные селекты
 @use "components/tooltipster"; //-> кастомные всплывающие подсказки
+@use "components/progress"; //-> прогресс загрузки
 
 // Блоки
 @use "components/loader";
